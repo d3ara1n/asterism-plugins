@@ -1,0 +1,20 @@
+{
+  "name": "asterism-plugins",
+  "private": true,
+  "workspaces": [
+    "plugins/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@asterism-app/builtin-api": "file:../asterism/packages/builtin-api",
+    "@asterism-app/plugin-build": "file:../asterism/packages/plugin-build",
+    "@asterism-app/sdk": "file:../asterism/packages/sdk",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "zod": "^4.6.7"
+  }
+}

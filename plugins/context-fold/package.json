@@ -1,0 +1,50 @@
+{
+  "name": "@asterism-plugins/context-fold",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Fold older tool images into recall tickets in Asterism Agent context.",
+  "files": [
+    "dist",
+    "README.md",
+    "locales"
+  ],
+  "peerDependencies": {
+    "@asterism-app/builtin-api": "*",
+    "@asterism-app/sdk": "*",
+    "zod": "^4.6.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "asterism-plugin-build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test src/*.test.ts",
+    "prepack": "npm run build"
+  },
+  "asterism": {
+    "id": "asterism.context-fold",
+    "displayName": {
+      "owner": "asterism.context-fold",
+      "id": "plugin.displayName",
+      "defaultMessage": "Context Fold",
+      "kind": "message",
+      "sourceLocale": "en"
+    },
+    "description": {
+      "owner": "asterism.context-fold",
+      "id": "plugin.description",
+      "defaultMessage": "Replace older tool images with recall tickets.",
+      "kind": "message",
+      "sourceLocale": "en"
+    },
+    "build": {
+      "runtime": "src/runtime.ts"
+    },
+    "i18n": {
+      "catalogs": {
+        "zh-Hans": "locales/zh-Hans.json"
+      }
+    }
+  }
+}
