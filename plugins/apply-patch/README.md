@@ -18,7 +18,7 @@ Build the plugin as described in the [workspace README](../../README.md), add th
 *** End Patch
 ```
 
-The Agent should see an `ADDED` and an `UPDATED` receipt in that order. While the model writes a patch, the tool body lists each file with its hunks and follows the end of the draft; the hunks have no line numbers because a patch carries no file positions. The settled body lists the same files with the diffs actually written, with line numbers, and the header shows the first path and the total `+added −removed`. A rejected patch keeps its intended hunks below the failure block. `greeting.txt` should contain `Hello there` followed by a newline. Re-run the same patch: it should reject the occupied Add target without changing `greeting.txt`.
+The Agent should see an `ADDED` and an `UPDATED` receipt in that order. While the model writes a patch, the tool body lists each file with its hunks and follows the end of the draft; the hunks have no line numbers because a patch carries no file positions. The settled call shows a file diff icon instead of the generic wrench. Its body lists the same files with the diffs actually written, with line numbers, and the header shows the first path and the total `+added −removed`. A rejected patch keeps its intended hunks below the failure block. `greeting.txt` should contain `Hello there` followed by a newline. Re-run the same patch: it should reject the occupied Add target without changing `greeting.txt`.
 
 ## Patch contract
 

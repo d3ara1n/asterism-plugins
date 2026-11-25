@@ -10,10 +10,9 @@ This npm workspace contains companion plugins for internal testing of Asterism's
 
 ## Set up and verify locally
 
-1. Keep this checkout beside a compatible Asterism source checkout named `asterism`. The workspace's `file:` dependencies use that checkout's API and builder. For Context Fold, the host must include the tool-result projection hook.
-2. In the Asterism checkout, install its dependencies and run `npm run build:plugin-tool`. In this repository, run `npm ci`. A successful `npm ci` alone does not prove the sibling builder is available.
-3. After changing plugin code or its manifest, run `npm run typecheck`, `npm test`, and `npm run build` from this repository's root. Keep generated `dist/` files out of Git.
-4. For changes to loading or runtime behavior, add the built plugin's package directory (for example, `plugins/context-fold`, not `dist/`) in Asterism's plugin settings, restart, and reproduce the expected behavior. If the required host checkout or hook is unavailable, report the blocked check rather than treating a successful build as host verification.
+- Use the installed host and npm setup in [Local testing](README.md#local-testing). When changing the target host release, pin the public package versions from its release notes.
+- After changing plugin code or its manifest, run `npm run typecheck`, `npm test`, and `npm run build` from this repository's root. Keep generated `dist/` files out of Git.
+- For changes to loading or runtime behavior, verify the expected behavior in the compatible installed host. Report any unverified host behavior separately from build results.
 
 ## Git Commit
 

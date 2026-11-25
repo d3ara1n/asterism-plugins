@@ -4,11 +4,12 @@
   "type": "module",
   "description": "Apply Codex-format text patches to a linked Asterism Directory.",
   "files": ["dist", "README.md", "locales"],
-  "dependencies": { "diff": "9.0.0" },
+  "dependencies": { "diff": "9.0.0", "lucide-react": "1.64.0" },
   "peerDependencies": {
     "@asterism-app/builtin-api": "*",
     "@asterism-app/sdk": "*",
     "react": "^19.3.0",
+    "react-intl": "^12.1.4",
     "zod": "^4.6.7"
   },
   "devDependencies": { "@types/react": "^19.2.0" },

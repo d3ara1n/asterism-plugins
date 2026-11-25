@@ -10,9 +10,9 @@
     "test": "npm test --workspaces --if-present"
   },
   "devDependencies": {
-    "@asterism-app/builtin-api": "file:../asterism/packages/builtin-api",
-    "@asterism-app/plugin-build": "file:../asterism/packages/plugin-build",
-    "@asterism-app/sdk": "file:../asterism/packages/sdk",
+    "@asterism-app/builtin-api": "1.2.1",
+    "@asterism-app/plugin-build": "1.0.1",
+    "@asterism-app/sdk": "2.5.0",
     "@types/node": "^26.6.6",
     "typescript": "^7.0.2",
     "zod": "^4.6.7"

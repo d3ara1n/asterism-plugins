@@ -1,6 +1,7 @@
 import { createElement as h, useMemo } from "react";
+import { FileDiff } from "lucide-react";
 import {
-  CodeDiff, defineRendererPlugin, StreamingScrollArea, ToolHeader, ToolResourceSubject, ToolScrollArea, toolRenderer, useI18n,
+  Diff, defineRendererPlugin, StreamingScrollArea, ToolHeader, ToolResourceSubject, ToolScrollArea, toolRenderer, useI18n,
   type FreeformToolRenderProps,
 } from "@asterism-app/sdk/renderer";
 import { ApplyPatch, messages, type Receipt } from "./contract.ts";
@@ -49,7 +50,7 @@ function File({ file, actual }: { file: FileView; actual: boolean }) {
       h("span", { className: styles.status }, i18n.formatMessage(messages[`status.${file.status}`])),
       h("span", { className: `type-code ${styles.path}` }, fileName(file))),
     // Receipt diffs are computed from the actual contents, so their positions are real; patch hunks carry none.
-    file.diff && h(CodeDiff, { diff: file.diff, lineNumbers: actual }),
+    file.diff && h(Diff, { diff: file.diff, lineNumbers: actual }),
     note && h("p", { className: "type-caption" }, i18n.formatMessage(note)));
 }
 
@@ -80,6 +81,7 @@ function Notes({ title, items }: { title: string; items: readonly string[] }) {
 const view = { headerRenderer: Header, bodyRenderer: Body };
 export default defineRendererPlugin({ modules: [{ resources: [], cards: [], tools: [toolRenderer(ApplyPatch, {
   label: messages["tool.label"],
+  icon: h(FileDiff, { size: 14, "aria-hidden": true }),
   input: { ...view, streaming: props => intent(props.text).some(file => file.diff !== null) },
   execution: view,
   result: view,
