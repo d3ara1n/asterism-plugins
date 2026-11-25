@@ -1,11 +1,11 @@
 # Asterism Plugins
 
-This npm workspace contains companion plugins for internal testing of Asterism's plugin system. Each plugin should exercise a specific host capability and make the expected behavior easy to verify. During internal testing, the distribution workflow is clone → build locally → load manually in Asterism. Do not publish to npm or add publishing automation during this phase.
+This npm workspace contains official companion plugins for Asterism. The distribution workflow is clone → build locally → load manually in Asterism. Do not publish to npm or add publishing automation.
 
 ## Add or change a plugin
 
-- Keep each plugin in its own workspace under `plugins/`. In the plugin's README, name the host capability it exercises and give the tester an observable result to check.
-- Use `@asterism-plugins/<name>` for official companion plugins (for example, `@asterism-plugins/context-fold`). Reserve `@asterism-app` for Asterism core and framework packages. Third-party authors use their own scope with an `asterism-` package prefix (for example, `@alice/asterism-my-plugin`).
+- Keep each plugin in its own workspace under `plugins/`. In the plugin's README, describe what the plugin does and how to verify its behavior in Asterism.
+- Use `@asterism-plugins/<name>` for official companion plugins (for example, `@asterism-plugins/apply-patch`). Reserve `@asterism-app` for Asterism core and framework packages. Third-party authors use their own scope with an `asterism-` package prefix (for example, `@alice/asterism-my-plugin`).
 - The npm package name and the runtime plugin ID (`asterism.id` in the package manifest) are distinct. Keep the runtime ID stable on a package rename unless the intent is to change the plugin's identity.
 
 ## Set up and verify locally
