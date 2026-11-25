@@ -1,6 +1,6 @@
 # Asterism Plugins
 
-This workspace contains companion plugins for internal testing of Asterism's plugin system. Context Fold is the first. The plugins are not published to npm during this phase: clone this repository, build locally, and load the plugin manually in Asterism.
+This workspace contains companion plugins for internal testing of Asterism's plugin system. The plugins are not published to npm during this phase: clone this repository, build locally, and load the plugin manually in Asterism.
 
 ## Local testing
 
@@ -8,3 +8,8 @@ This workspace contains companion plugins for internal testing of Asterism's plu
 2. Install dependencies in the Asterism checkout and run `npm run build:plugin-tool` there.
 3. In this checkout, run `npm ci`, `npm run typecheck`, `npm test`, and `npm run build`.
 4. In Asterism's plugin settings, add the built package directory (`plugins/context-fold` for Context Fold), then restart Asterism.
+
+## Plugins
+
+- [Context Fold](plugins/context-fold/README.md): tool-result projection.
+- [Apply Patch](plugins/apply-patch/README.md): freeform Directory writes and diff receipts.

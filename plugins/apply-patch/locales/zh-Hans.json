@@ -1,0 +1,16 @@
+{
+  "plugin.displayName": "应用补丁",
+  "plugin.description": "对已链接的目录应用 Codex 格式的补丁。",
+  "tool.label": "应用补丁",
+  "tool.details": "文件变更",
+  "tool.more": "{path} 等另外 {count} 个",
+  "status.added": "新增",
+  "status.updated": "更新",
+  "status.deleted": "删除",
+  "status.moved": "移动",
+  "status.unchanged": "未变更",
+  "file.diffOmitted": "差异已省略：超出大小或时间限制。",
+  "file.noDiff": "内容无变化。",
+  "result.warnings": "匹配警告",
+  "result.remaining": "未应用"
+}
